@@ -1,9 +1,9 @@
 @use "_reset.scss";
 
-.hfContainer {
-  max-width: 1300px;
+.hContainer {
+  max-width: 1500px;
   margin: 0 auto;
-  height: 100px;
+  min-height: 100px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -66,5 +66,51 @@
         color: #e0c7bb;
       }
     }
+  }
+}
+
+footer {
+  background-color: #587297;
+}
+
+.fContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 30px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #587297;
+  & p {
+    padding: 0 15px;
+  }
+  &__text {
+    color: white;
+    &:first-child {
+      color: #e0c7bb;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    & span {
+      color: #e0c7bb;
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .hContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .fContainer p:nth-child(2) {
+    display: none;
   }
 }
