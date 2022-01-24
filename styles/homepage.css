@@ -148,13 +148,19 @@ table {
 section.slogan {
   background-color: #5d7595;
 }
+section.slogan p {
+  color: white;
+  font-size: 25px;
+}
 section.slogan p:nth-child(-n+3) {
   text-align: center;
+  margin-bottom: 5px;
 }
 section.test h2 {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 30px;
+  color: #5d7595;
 }
 section.test div.books {
   display: flex;
@@ -164,11 +170,17 @@ section.test div.books {
 }
 section.test a {
   cursor: pointer;
+  color: #5d7595;
+}
+section.test a :hover {
+  color: #e4c4bc;
 }
 section.test article {
   font-size: 16px;
   flex: 1 1 300px;
-  background-color: red;
+}
+section.test article p {
+  margin-top: 15px;
 }
 section.test div.imgholder {
   aspect-ratio: 16/9;
