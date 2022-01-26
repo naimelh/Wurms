@@ -145,14 +145,38 @@ table {
   background-color: white;
 }
 
-article {
-  display: flex;
-  margin-bottom: 50px;
+a {
+  margin-bottom: 20px;
 }
-article img {
+a:link {
+  text-decoration: none;
+}
+a:visited, a:active {
+  text-decoration: none;
+}
+a:hover {
+  display: block;
+  border: solid 1px #5d7595;
+}
+a:hover article {
+  margin-bottom: 0px;
+}
+a:nth-child(even) article {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+a:nth-child(even) article .description {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+a article {
+  display: flex;
+  margin-bottom: 20px;
+}
+a article img {
   display: block;
 }
-article h2 {
+a article h2 {
   margin-bottom: 15px;
   font-size: 25px;
   border: solid 1px #5d7595;
@@ -160,21 +184,24 @@ article h2 {
   color: #e4c4bc;
   padding: 5px;
 }
-article p {
+a article p {
   border: solid 1px #f3f3f4;
   padding: 5px;
+  text-align: justify;
 }
-article .description {
-  width: 65%;
+a article .description {
+  width: 100%;
   margin-left: 10px;
 }
-article:nth-child(even) {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-article:nth-child(even) .description {
-  margin-right: 10px;
-  margin-left: 0px;
+
+@media screen and (max-width: 450px) {
+  a article {
+    display: block;
+  }
+  a article img {
+    margin: auto;
+    margin-bottom: 10px;
+  }
 }
 
 /*# sourceMappingURL=listpage.css.map */
