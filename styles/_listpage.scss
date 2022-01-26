@@ -1,0 +1,45 @@
+@use "_reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.lContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 100px;
+  padding: 20px;
+  background-color: white;
+}
+
+article {
+  display: flex;
+  margin-bottom: 50px;
+  img {
+    display: block;
+  }
+  h2 {
+    margin-bottom: 15px;
+    font-size: 25px;
+    border: solid 1px #5d7595;
+    background-color: #5d7595;
+    color: #e4c4bc;
+    padding: 5px;
+  }
+  p {
+    border: solid 1px #f3f3f4;
+    padding: 5px;
+  }
+  .description {
+    width: 65%;
+    margin-left: 10px;
+  }
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    .description {
+      margin-right: 10px;
+      margin-left: 0px;
+    }
+  }
+}
