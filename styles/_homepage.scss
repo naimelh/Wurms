@@ -24,49 +24,26 @@ section {
       margin-bottom: 5px;
     }
   }
-  &.test {
+  &.books {
     h2 {
       margin-top: 50px;
       margin-bottom: 50px;
       font-size: 30px;
       color: #5d7595;
     }
-    div.books {
+    div.list_books {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 100px;
-    }
-    a {
-      cursor: pointer;
-      color: #5d7595;
-      :hover {
-        color: #e4c4bc;
-      }
-    }
-    article {
-      font-size: 16px;
-      flex: 1 1 300px;
+      gap: 5%;
 
-      p {
-        margin-top: 15px;
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        margin-left: 10px;
       }
-    }
-    div.imgholder {
-      aspect-ratio: 16 / 9;
-      position: relative;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      p {
-        position: absolute;
-        bottom: 10%;
-        border: solid 1px #5d7595;
-        background-color: white;
-        padding: 0 10% 0 3%;
+      article {
+        display: flex;
       }
     }
   }

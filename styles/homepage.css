@@ -156,48 +156,25 @@ section.slogan p:nth-child(-n+3) {
   text-align: center;
   margin-bottom: 5px;
 }
-section.test h2 {
+section.books h2 {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #5d7595;
 }
-section.test div.books {
+section.books div.list_books {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 5%;
 }
-section.test a {
-  cursor: pointer;
-  color: #5d7595;
+section.books div.list_books h2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
-section.test a :hover {
-  color: #e4c4bc;
-}
-section.test article {
-  font-size: 16px;
-  flex: 1 1 300px;
-}
-section.test article p {
-  margin-top: 15px;
-}
-section.test div.imgholder {
-  aspect-ratio: 16/9;
-  position: relative;
-}
-section.test div.imgholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-section.test div.imgholder p {
-  position: absolute;
-  bottom: 10%;
-  border: solid 1px #5d7595;
-  background-color: white;
-  padding: 0 10% 0 3%;
+section.books div.list_books article {
+  display: flex;
 }
 
 /*# sourceMappingURL=homepage.css.map */
