@@ -1,0 +1,205 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.lContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 100px;
+  padding: 20px;
+  background-color: white;
+}
+
+a {
+  margin-bottom: 20px;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited, a:active {
+  text-decoration: none;
+}
+a:hover {
+  display: block;
+  border: solid 5px #e4c4bc;
+}
+a:hover article {
+  margin-bottom: 0px;
+}
+a:nth-child(even) article {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+a:nth-child(even) article .description {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+a article {
+  display: flex;
+  margin-bottom: 20px;
+}
+a article img {
+  display: block;
+}
+a article h2 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  background-color: #5d7595;
+  color: white;
+  padding: 10px;
+}
+a article p {
+  padding: 5px;
+  text-align: justify;
+}
+a article .description {
+  width: 100%;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  a article {
+    display: block;
+  }
+  a article img {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*# sourceMappingURL=listpage.css.map */

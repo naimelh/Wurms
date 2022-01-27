@@ -1,0 +1,77 @@
+@use "_reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.lContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 100px;
+  padding: 20px;
+  background-color: white;
+}
+a {
+  margin-bottom: 20px;
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+  &:hover {
+    article {
+      margin-bottom: 0px;
+    }
+    display: block;
+    border: solid 5px #e4c4bc;
+  }
+
+  &:nth-child(even) {
+    article {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      .description {
+        margin-right: 10px;
+        margin-left: 0px;
+      }
+    }
+  }
+
+  article {
+    display: flex;
+    margin-bottom: 20px;
+    img {
+      display: block;
+    }
+    h2 {
+      margin-bottom: 10px;
+      font-size: 25px;
+      background-color: #5d7595;
+      color: white;
+      padding: 10px;
+    }
+    p {
+      padding: 5px;
+      text-align: justify;
+    }
+    .description {
+      width: 100%;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  a {
+    article {
+      display: block;
+      img {
+        margin: auto;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
