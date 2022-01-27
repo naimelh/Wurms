@@ -156,7 +156,7 @@ a:visited, a:active {
 }
 a:hover {
   display: block;
-  border: solid 1px #5d7595;
+  border: solid 5px #e4c4bc;
 }
 a:hover article {
   margin-bottom: 0px;
@@ -177,15 +177,13 @@ a article img {
   display: block;
 }
 a article h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 25px;
-  border: solid 1px #5d7595;
   background-color: #5d7595;
-  color: #e4c4bc;
-  padding: 5px;
+  color: white;
+  padding: 10px;
 }
 a article p {
-  border: solid 1px #f3f3f4;
   padding: 5px;
   text-align: justify;
 }

@@ -26,7 +26,7 @@ a {
       margin-bottom: 0px;
     }
     display: block;
-    border: solid 1px #5d7595;
+    border: solid 5px #e4c4bc;
   }
 
   &:nth-child(even) {
@@ -47,15 +47,13 @@ a {
       display: block;
     }
     h2 {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-size: 25px;
-      border: solid 1px #5d7595;
       background-color: #5d7595;
-      color: #e4c4bc;
-      padding: 5px;
+      color: white;
+      padding: 10px;
     }
     p {
-      border: solid 1px #f3f3f4;
       padding: 5px;
       text-align: justify;
     }
