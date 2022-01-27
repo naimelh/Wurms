@@ -135,6 +135,7 @@ table {
 
 * {
   box-sizing: border-box;
+  font-family: "Old Standard TT", serif;
 }
 
 .mContainer {
@@ -147,6 +148,7 @@ table {
 
 section.slogan {
   background-color: #5d7595;
+  padding: 10px 20px;
 }
 section.slogan p {
   color: white;
@@ -154,8 +156,8 @@ section.slogan p {
 }
 section.slogan p:nth-child(-n+2) {
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 section.books h2 {
   margin-top: 50px;

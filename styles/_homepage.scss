@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Old Standard TT", serif;
 }
 
 .mContainer {
@@ -15,14 +16,15 @@
 section {
   &.slogan {
     background-color: #5d7595;
+    padding: 10px 20px;
     p {
       color: white;
       font-size: 25px;
-    }
-    p:nth-child(-n + 2) {
-      text-align: center;
-      margin-bottom: 20px;
-      margin-top: 20px;
+      &:nth-child(-n + 2) {
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+      }
     }
   }
   &.books {
