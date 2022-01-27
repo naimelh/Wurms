@@ -152,29 +152,64 @@ section.slogan p {
   color: white;
   font-size: 25px;
 }
-section.slogan p:nth-child(-n+3) {
+section.slogan p:nth-child(-n+2) {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 section.books h2 {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 30px;
   color: #5d7595;
+  text-decoration: none;
 }
 section.books div.list_books {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 5%;
-}
-section.books div.list_books h2 {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  margin-left: 10px;
+  width: 100%;
 }
 section.books div.list_books article {
   display: flex;
+  flex: 1 1 30%;
+  margin-bottom: 50px;
+}
+section.books div.list_books article a:link {
+  text-decoration: none;
+}
+section.books div.list_books article a.book_active:hover {
+  text-decoration: none;
+  border: solid 1px #e4c4bc;
+}
+section.books div.list_books article a.author_active:hover {
+  border: solid 1px black;
+}
+section.books div.list_books article h2 {
+  margin: 0px 5px;
+  font-size: 25px;
+}
+section.books div.list_books article .imgholder {
+  position: relative;
+}
+section.books div.list_books article .imgholder p {
+  position: absolute;
+  bottom: 20%;
+  border: solid 1px #5d7595;
+  background-color: white;
+  padding: 5px 30px 5px 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  section.books div.list_books article {
+    flex: 1 1 50%;
+  }
+}
+@media screen and (max-width: 950px) {
+  section.books div.list_books article {
+    display: block;
+    flex: 1 1 100%;
+    margin: 5% 45%;
+  }
 }
 
 /*# sourceMappingURL=homepage.css.map */
