@@ -135,6 +135,8 @@ table {
 
 * {
   box-sizing: border-box;
+  font-family: "Old Standard TT", serif;
+  color: black;
 }
 
 .lContainer {
@@ -156,10 +158,11 @@ a:visited, a:active {
 }
 a:hover {
   display: block;
-  border: solid 5px #e4c4bc;
+  margin-bottom: 50px;
+  border-bottom: solid 5px #e4c4bc;
 }
 a:hover article {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 a:nth-child(even) article {
   flex-direction: row-reverse;
@@ -192,13 +195,13 @@ a article .description {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   a article {
     display: block;
   }
   a article img {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 }
 
