@@ -8,7 +8,7 @@ CreateConnection();
     <?php
     PrintHead("Home");
     ?>
-    <link rel="stylesheet" href="./styles/homepage.css"/>
+    <link rel="stylesheet" href="./styles/home.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap"
@@ -18,34 +18,37 @@ CreateConnection();
 <?php
 PrintHeader();
 ?>
-<main>
-    <div class="mContainer">
-        <section class="slogan">
-            <p>Proud to be a bookworm</p>
-            <p>Make reading a habit!</p>
-            <p>Welcome, Bookworm! The next chapter's waiting for you!</p>
-        </section>
+ <main>
+      <section class="slogan">
+        <div class="container">
+          <p>Proud to be a bookworm</p>
+          <p>Make reading a habit!</p>
+          <p>Welcome, Bookworm! The next chapter's waiting for you!</p>
+        </div>
+      </section>
+      <div class="container">
         <section class="books">
-            <h2>Popular Books</h2>
-            <div class="list_books">
+          <h2>Popular books</h2>
+          <div class="books__pop">
                 <?php
                 $template = file_get_contents("templates/home.html");
 
-                $sql = 'SELECT B.book_id, B.book_title, A.aut_id, A.aut_firstname, A.aut_lastname
+                $sql = 'SELECT B.book_id, B.book_title, B.book_img, A.aut_id, A.aut_firstname, A.aut_lastname
                         FROM Book B
                             INNER JOIN Author_Book AB on B.book_id = AB.book_id
                             INNER JOIN Author A on AB.aut_id = A.aut_id
                         WHERE B.fav_id = 1';
 
-                $data = GetData($sql);
 
+                $data = GetData($sql);
+                
                 print MergeViewWithData($template, $data);
 
                 ?>
-            </div>
+           </div>
         </section>
-    </div>
-</main>
+      </div>
+    </main>
 
 <?php
 printFooter();

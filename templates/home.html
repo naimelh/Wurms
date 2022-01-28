@@ -1,12 +1,10 @@
 <article>
-    <div class="img">
-        <img src="https://picsum.photos/200/300" alt=""/>
-        <p>Popular</p>
-    </div>
-    <div class="description">
-        <a href="book.php?book_id=@book_id@" class="book_active"><h2>@book_title@</h2></a>
-        <a href="author.php?aut_id=@aut_id@" class="author_active"
-        ><h2>@aut_firstname@ @aut_lastname@</h2></a
-        >
-    </div>
+  <div class="imgholder">
+    <img src="/img/@book_img@" alt="" />
+    <p>Popular</p>
+  </div>
+  <div class="links">
+    <a href="book.php?book_id=@book_id@">@book_title@</a>
+    <a href="author.php?aut_id=@aut_id@">@aut_firstname@ @aut_lastname@</a>
+  </div>
 </article>
