@@ -25,10 +25,9 @@ a {
   }
   &:hover {
     article {
-      margin-bottom: 10px;
     }
     display: block;
-    margin-bottom: 50px;
+
     border-bottom: solid 5px #e4c4bc;
   }
 
@@ -45,7 +44,7 @@ a {
 
   article {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     img {
       display: block;
     }
