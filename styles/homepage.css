@@ -166,68 +166,58 @@ section.books h2 {
   color: #5d7595;
   text-decoration: none;
 }
-section.books div.list_books {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+section.books .list_books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(200px, auto);
 }
-section.books div.list_books article {
-  display: flex;
-  flex: 1 1 30%;
-  margin-bottom: 50px;
+section.books .list_books article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-section.books div.list_books article .description h2 {
-  margin: 0px 5px;
-  font-size: 25px;
+section.books .list_books article h2 {
+  margin: 0;
+  font-size: 1.5em;
 }
-section.books div.list_books article .description a:link {
-  text-decoration: none;
+section.books .list_books article h2:first-child {
+  margin-bottom: 15px;
 }
-section.books div.list_books article .description a.book_active:hover h2 {
-  color: #e4c4bc;
-}
-section.books div.list_books article .description a.author_active h2 {
-  margin-top: 30px;
-}
-section.books div.list_books article .description a.author_active:hover h2 {
-  color: black;
-}
-section.books div.list_books article .img {
+section.books .list_books article .img {
   position: relative;
 }
-section.books div.list_books article .img img {
-  object-fit: cover;
-  overflow: hidden;
-}
-section.books div.list_books article .img p {
+section.books .list_books article .img p {
   position: absolute;
   bottom: 20%;
   border: solid 1px #5d7595;
   background-color: white;
   padding: 5px 30px 5px 10px;
 }
+section.books .list_books article .description a:link {
+  text-decoration: none;
+}
+section.books .list_books article .description a.book_active:hover h2 {
+  border-bottom: 1px solid #5d7595;
+  color: #e4c4bc;
+}
+section.books .list_books article .description a.author_active:hover h2 {
+  border-bottom: 1px solid #5d7595;
+  color: #e4c4bc;
+}
 
-@media screen and (max-width: 1200px) {
-  section.books div.list_books article {
-    flex: 1 1 50%;
+@media screen and (max-width: 1450px) {
+  section.slogan p {
+    text-align: center;
+  }
+  section.books div.list_books {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   section.books div.list_books {
-    display: block;
+    grid-template-columns: repeat(1, 1fr);
   }
   section.books div.list_books article {
-    margin: 0 auto;
-    display: block;
-  }
-  section.books div.list_books article .img {
-    margin: 0 auto;
-  }
-  section.books div.list_books article .description {
-    margin: 0 auto;
-  }
-  section.books div.list_books article .description h2 {
-    font-size: 16px;
     margin: 0 auto;
   }
 }

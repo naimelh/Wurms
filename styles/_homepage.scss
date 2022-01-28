@@ -35,49 +35,23 @@ section {
       color: #5d7595;
       text-decoration: none;
     }
-    div.list_books {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-
+    .list_books {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: minmax(200px, auto);
       article {
-        display: flex;
-        flex: 1 1 30%;
-        margin-bottom: 50px;
-
-        .description {
-          h2 {
-            margin: 0px 5px;
-            font-size: 25px;
-          }
-
-          a {
-            &:link {
-              text-decoration: none;
-            }
-            &.book_active:hover {
-              h2 {
-                color: #e4c4bc;
-              }
-            }
-            &.author_active {
-              h2 {
-                margin-top: 30px;
-              }
-            }
-            &.author_active:hover {
-              h2 {
-                color: black;
-              }
-            }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        h2 {
+          margin: 0;
+          font-size: 1.5em;
+          &:first-child {
+            margin-bottom: 15px;
           }
         }
         .img {
           position: relative;
-          img {
-            object-fit: cover;
-            overflow: hidden;
-          }
           p {
             position: absolute;
             bottom: 20%;
@@ -86,41 +60,53 @@ section {
             padding: 5px 30px 5px 10px;
           }
         }
-      }
-    }
-  }
-}
 
-@media screen and (max-width: 1200px) {
-  section {
-    &.books {
-      div.list_books {
-        article {
-          flex: 1 1 50%;
+        .description {
+          a {
+            &:link {
+              text-decoration: none;
+            }
+            &.book_active:hover {
+              h2 {
+                border-bottom: 1px solid #5d7595;
+                color: #e4c4bc;
+              }
+            }
+            &.author_active:hover {
+              h2 {
+                border-bottom: 1px solid #5d7595;
+                color: #e4c4bc;
+              }
+            }
+          }
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1450px) {
+  section {
+    &.slogan {
+      p {
+        text-align: center;
+      }
+    }
+    &.books {
+      div.list_books {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
   section {
     &.books {
       div.list_books {
-        display: block;
+        grid-template-columns: repeat(1, 1fr);
         article {
           margin: 0 auto;
-          display: block;
-          .img {
-            margin: 0 auto;
-          }
-          .description {
-            margin: 0 auto;
-            h2 {
-              font-size: 16px;
-              margin: 0 auto;
-            }
-          }
         }
       }
     }
