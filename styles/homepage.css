@@ -176,24 +176,30 @@ section.books div.list_books article {
   flex: 1 1 30%;
   margin-bottom: 50px;
 }
-section.books div.list_books article a:link {
-  text-decoration: none;
-}
-section.books div.list_books article a.book_active:hover {
-  text-decoration: none;
-  border: solid 1px #e4c4bc;
-}
-section.books div.list_books article a.author_active:hover {
-  border: solid 1px black;
-}
-section.books div.list_books article h2 {
+section.books div.list_books article .description h2 {
   margin: 0px 5px;
   font-size: 25px;
 }
-section.books div.list_books article .imgholder {
+section.books div.list_books article .description a:link {
+  text-decoration: none;
+}
+section.books div.list_books article .description a.book_active:hover h2 {
+  color: #e4c4bc;
+}
+section.books div.list_books article .description a.author_active h2 {
+  margin-top: 30px;
+}
+section.books div.list_books article .description a.author_active:hover h2 {
+  color: black;
+}
+section.books div.list_books article .img {
   position: relative;
 }
-section.books div.list_books article .imgholder p {
+section.books div.list_books article .img img {
+  object-fit: cover;
+  overflow: hidden;
+}
+section.books div.list_books article .img p {
   position: absolute;
   bottom: 20%;
   border: solid 1px #5d7595;
@@ -207,10 +213,22 @@ section.books div.list_books article .imgholder p {
   }
 }
 @media screen and (max-width: 950px) {
-  section.books div.list_books article {
+  section.books div.list_books {
     display: block;
-    flex: 1 1 100%;
-    margin: 5% 45%;
+  }
+  section.books div.list_books article {
+    margin: 0 auto;
+    display: block;
+  }
+  section.books div.list_books article .img {
+    margin: 0 auto;
+  }
+  section.books div.list_books article .description {
+    margin: 0 auto;
+  }
+  section.books div.list_books article .description h2 {
+    font-size: 16px;
+    margin: 0 auto;
   }
 }
 
