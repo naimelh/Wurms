@@ -31,17 +31,21 @@ PrintHeader();
           <h2>Popular books</h2>
           <div class="books__pop">
                 <?php
-                $template = file_get_contents("templates/home.html");
 
+                // get template for Articles
+                $template = file_get_contents("templates/home.html");
+                
+                // SQL query to get the data from the database
                 $sql = 'SELECT B.book_id, B.book_title, B.book_img, A.aut_id, A.aut_firstname, A.aut_lastname
                         FROM Book B
                             INNER JOIN Author_Book AB on B.book_id = AB.book_id
                             INNER JOIN Author A on AB.aut_id = A.aut_id
                         WHERE B.fav_id = 1';
 
-
+                // get the data
                 $data = GetData($sql);
                 
+                // Merge the Template of Article with the data and fill in the @..@ positions
                 print MergeViewWithData($template, $data);
 
                 ?>
