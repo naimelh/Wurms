@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/headerfooter.css" />
+    <link rel="stylesheet" href="styles/edit.css" />
+    <title>edit</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h2>Bewerken</h2>
+        <form action="book.php" method="POST" class="edit">
+          <!-- meta info -->
+          <input type="hidden" id="table" name="table" value="images" />
+          <input type="hidden" id="pkey" name="pkey" value="book_id" />
+          <input
+            type="hidden"
+            id="afterinsert"
+            name="afterinsert"
+            value="index.php"
+          />
+          <input
+            type="hidden"
+            id="afterupdate"
+            name="afterupdate"
+            value="index.php"
+          />
+          <!-- end meta info -->
+
+          <!--security-->
+          <input type="hidden" name="csrf" value="@csrf_token@" />
+          <p><small>@csrf_token@</small></p>
+          <!--end security-->
+          <div>
+            <label for="book_title" class="edit__label">Title</label>
+            <input
+              type="text"
+              class="edit__text"
+              placeholder="Title"
+              value="@book_title@"
+              name="book_title"
+            />
+          </div>
+          <div>
+            <label for="language" class="edit__label">Language</label>
+            <select class="edit__select" name="lang_id" id="lang_id">
+              <option value="0">please select lang</option>
+              <option value="1">optie 1</option>
+              <option value="2">optie 2</option>
+            </select>
+          </div>
+          <div>
+            <label for="favorite" class="edit__label">Popular</label>
+            <select class="edit__select" name="lang_id" id="lang_id">
+              <option value="0">is it Popular</option>
+              <option value="1">y</option>
+              <option value="2">n</option>
+            </select>
+          </div>
+          <div>
+            <label for="publish_year" class="edit__label">Publish year</label>
+            <input
+              type="text"
+              class="edit__text"
+              placeholder="Publish year"
+              value="@publish_year@"
+              name="publish_year"
+            />
+          </div>
+          <div>
+            <label for="book_pages" class="edit__label">Total pages</label>
+            <input
+              type="text"
+              class="edit__text"
+              placeholder="pages"
+              value="@book_pages@"
+              name="book_pages"
+            />
+          </div>
+          <button class="edit__button" type="submit">Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
