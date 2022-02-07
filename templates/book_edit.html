@@ -1,7 +1,8 @@
 <form action="lib/save.php" method="POST" class="edit">
     <!-- meta info -->
     <input type="hidden" id="table" name="table" value="Book" />
-    <input type="hidden" id="pkey" name="pkey" value="@book_id@" />
+    <input type="hidden" id="pkey" name="pkey" value="book_id" />
+    <input type="hidden" id="book_id" name="book_id" value="@book_id@"/>
     <input
             type="hidden"
             id="afterinsert"
@@ -18,7 +19,6 @@
 
     <!--security-->
     <input type="hidden" name="csrf" value="@csrf_token@" />
-    <p><small>@csrf_token@</small></p>
     <!--end security-->
     <div>
         <label for="book_title" class="edit__label">Title</label>
@@ -32,7 +32,7 @@
     </div>
     <div>
         <label for="language" class="edit__label">Language</label>
-        @select_lang@
+        @select_lang@²
     </div>
     <div>
         <label for="favorite" class="edit__label">Popular</label>

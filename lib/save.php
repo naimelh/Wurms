@@ -1,9 +1,7 @@
 <?php
-error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require_once "autoload.php";
-
-var_dump($_POST["pkey"]);
 
 SaveFormData();
 
@@ -34,11 +32,23 @@ function SaveFormData()
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
         CompareWithDatabase( $table, $pkey );
 
+        //Validaties voor het registratieformulier
+        if ( $table == "user" )
+        {
+            ValidateUsrPassword( $_POST['usr_password'] );
+            ValidateUsrEmail( $_POST['usr_email'] );
+            CheckUniqueUsrEmail( $_POST['usr_email'] );
+        }
+
         //terugkeren naar afzender als er een fout is
-        //if ( count($_SESSION['errors']) > 0 ) { header( "Location: " . $sending_form_uri ); exit
-    //(); }
+        if ( count($_SESSION['errors']) > 0 )
+        {
+            $_SESSION['OLD_POST'] = $_POST;
+            header( "Location: " . $sending_form_uri ); exit();
+        }
 
         //insert or update?
+        print ($_POST["pkey"]);
         if ( $_POST["$pkey"] > 0 ) $update = true;
         else $insert = true;
 
@@ -60,7 +70,11 @@ function SaveFormData()
                 continue;
             }
 
-            //all other data-fields
+            if ( $field == "usr_password" ) //encrypt usr_password
+            {
+                $value = password_hash( $value, PASSWORD_BCRYPT );
+            }
+
             $keys_values[] = " $field = '$value' " ;
         }
 
@@ -75,15 +89,20 @@ function SaveFormData()
         //run SQL
         $result = ExecuteSQL( $sql );
 
+        if ( $result AND $table == "user" )
+        {
+            $_SESSION['msgs'][] = "Bedankt voor uw registratie";
+        }
+
         //output if not redirected
         print $sql ;
         print "<br>";
         print $result->rowCount() . " records affected";
 
         //redirect after insert or update
-        // if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" .
-        // $_POST["afterinsert"] );
-       //if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../" .
-        // $_POST["afterupdate"] );
+
+        if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" . $_POST["afterinsert"] );
+        if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../" . $_POST["afterupdate"] );
+
     }
 }
