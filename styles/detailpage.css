@@ -1,0 +1,97 @@
+@use "reset";
+main * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Old Standard TT", serif;
+  line-height: normal;
+  color: #5d7595;
+}
+
+main .aContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 100px;
+  padding: 2%;
+}
+
+main .aContainer:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+main img {
+  width: 50%;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+  overflow: hidden;
+  max-width: 100%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin-top: 1%;
+}
+
+main img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+main .bio {
+  padding-top: 4%;
+  text-align: center;
+  margin-bottom: 1%;
+  font-size: 24px;
+}
+
+main .bio .title {
+  font-size: 50px;
+}
+
+main .bio .author {
+  font-weight: 700;
+}
+
+main .bio .country {
+  font-weight: 400;
+  font-size: 35px;
+  color: #e4c4bc;
+}
+
+main .bio a:link {
+  color: #e4c4bc;
+  text-decoration: none;
+  cursor: auto;
+}
+
+@media only screen and (max-width: 950px) {
+  /* For tablets: */
+  .aContainer {
+    width: 80%;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  /* For mobile phones: */
+  img,
+  .aContainer {
+    width: 100%;
+  }
+  .title {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=detailpage.css.map */
