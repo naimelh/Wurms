@@ -20,6 +20,7 @@ h2 {
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  margin-bottom: 100px;
 }
 .edit div {
   display: flex;
