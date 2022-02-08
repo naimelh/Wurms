@@ -139,66 +139,76 @@ table {
   color: black;
 }
 
-.lContainer {
-  max-width: 1500px;
-  margin: 0 auto;
-  min-height: 100px;
-  padding: 20px;
-  background-color: white;
+main {
+  margin-top: 10px;
 }
 
-a {
+.lContainer {
+  max-width: 1500px;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.listpage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.listpage article {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
 }
-a:link {
-  text-decoration: none;
-}
-a:visited, a:active {
-  text-decoration: none;
-}
-a:hover {
-  display: block;
-  border-bottom: solid 5px #e4c4bc;
-}
-a:nth-child(even) article {
+.listpage article:nth-child(even) {
   flex-direction: row-reverse;
-  justify-content: flex-end;
 }
-a:nth-child(even) article .description {
+.listpage article:nth-child(even) .title {
   margin-right: 10px;
   margin-left: 0px;
 }
-a article {
-  display: flex;
-  margin-bottom: 40px;
+.listpage article .imgholder {
+  max-width: 200px;
 }
-a article img {
+.listpage article .imgholder img {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-a article h2 {
-  margin-bottom: 10px;
-  font-size: 25px;
+.listpage article .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  font-size: 20px;
+  width: 90%;
+}
+.listpage article .title a {
+  display: block;
+  color: white;
+  padding: 10px 10px 4px 10px;
+  margin-bottom: 5px;
+}
+.listpage article .title a:hover {
+  color: #e4c4bc;
+}
+.listpage article .title .link {
+  margin-bottom: 20px;
   background-color: #5d7595;
   color: white;
-  padding: 10px;
-}
-a article p {
-  padding: 5px;
-  text-align: justify;
-}
-a article .description {
   width: 100%;
-  margin-left: 10px;
 }
-
-@media screen and (max-width: 650px) {
-  a article {
-    display: block;
-  }
-  a article img {
-    margin: auto;
-    margin-bottom: 40px;
-  }
+.listpage article .title .text {
+  background-color: white;
+  width: 100%;
+}
+.listpage article .title .text p {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=listpage.css.map */
