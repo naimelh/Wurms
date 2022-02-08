@@ -25,13 +25,13 @@ PrintHeader();
     <div class="container">
 
         <?php
+        // Checking if the given id is book_id if not go to else if
+        if (key_exists("book_id", $_GET)) {
+            echo '<h2>Bewerken Book</h2>';
 
-        if (key_exists("book_id",$_GET)){
-           echo  '<h2>Bewerken Book</h2>';
-
-            // error when book_id is not included in the link or not been found
-            if (!is_numeric($_GET['book_id'])) die("Ongeldig argument " . $_GET['book_id'] . "
-        opgegeven");
+            // error when book_id is not numeric in the link or not been found
+            if (!is_numeric($_GET['book_id']))
+                die("Ongeldig argument " . $_GET['book_id'] . "opgegeven");
 
             //getting the data from the SQL
             $data = GetData("select * from Book where book_id=" . $_GET['book_id']);
@@ -67,13 +67,13 @@ PrintHeader();
             // Printing the Form
             print $output;
 
-        }
-        else if (key_exists("aut_id",$_GET)){
-            echo  '<h2>Bewerken Auteur</h2>';
+        } // Checking if the given id is book_id
+        else if (key_exists("aut_id", $_GET)) {
+            echo '<h2>Bewerken Auteur</h2>';
 
-            // error when book_id is not included in the link or not been found
-            if (!is_numeric($_GET['aut_id'])) die("Ongeldig argument " . $_GET['aut_id'] . "
-        opgegeven");
+            // error when aut_id is not numeric in the link or not been found
+            if (!is_numeric($_GET['aut_id']))
+                die("Ongeldig argument " . $_GET['aut_id'] . "opgegeven");
 
             //getting the data from the SQL
             $data = GetData("select * from Author where aut_id=" . $_GET['aut_id']);
@@ -84,19 +84,19 @@ PrintHeader();
             // Generating the CSRF Security code
             $extra_elements['csrf_token'] = GenerateCSRF("edit.php");
 
-            // Making the Select html for Language
+            // Making the Select html for Country
             $extra_elements['select_country'] = MakeSelect(
                 $fkey = 'country_id',
                 $value = $row['country_id'],
                 $sql = "select country_id, country_desc from Country");
 
-            // Making the Select html for Popular
+            // Making the Select html for Gender
             $extra_elements['select_gender'] = MakeSelect(
                 $fkey = 'gender_id',
                 $value = $row['gender_id'],
                 $sql = "select gender_id, gender_desc from Gender");
 
-            // Get the Template for book_edit
+            // Get the Template for author_edit
             $output = file_get_contents("templates/author_edit.html");
 
             // Merge de data from $data with the template
@@ -109,8 +109,7 @@ PrintHeader();
             // Printing the Form
             print $output;
 
-        }
-        else {
+        } else {
             echo "No Book or Author ID given";
         }
         ?>
