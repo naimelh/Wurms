@@ -1,62 +1,54 @@
 <form action="lib/save.php" method="POST" class="edit">
-    <!-- meta info -->
-    <input type="hidden" id="table" name="table" value="Book" />
-    <input type="hidden" id="pkey" name="pkey" value="book_id" />
-    <input type="hidden" id="book_id" name="book_id" value="@book_id@"/>
-    <input
-            type="hidden"
-            id="afterinsert"
-            name="afterinsert"
-            value="index.php"
-    />
-    <input
-            type="hidden"
-            id="afterupdate"
-            name="afterupdate"
-            value="index.php"
-    />
-    <!-- end meta info -->
+  <!-- meta info -->
+  <input type="hidden" id="table" name="table" value="Book" />
+  <input type="hidden" id="pkey" name="pkey" value="book_id" />
+  <input type="hidden" id="book_id" name="book_id" value="@book_id@" />
+  <input type="hidden" id="afterinsert" name="afterinsert" value="index.php" />
+  <input type="hidden" id="afterupdate" name="afterupdate" value="index.php" />
+  <!-- end meta info -->
 
-    <!--security-->
-    <input type="hidden" name="csrf" value="@csrf_token@" />
-    <!--end security-->
-    <div>
-        <label for="book_title" class="edit__label">Title</label>
-        <input
-                type="text"
-                class="edit__text"
-                placeholder="Title"
-                value="@book_title@"
-                name="book_title"
-        />
-    </div>
-    <div>
-        <label for="language" class="edit__label">Language</label>
-        @select_lang@²
-    </div>
-    <div>
-        <label for="favorite" class="edit__label">Popular</label>
-        @select_pop@
-    </div>
-    <div>
-        <label for="publish_year" class="edit__label">Publish year (YY-MM-DD)</label>
-        <input
-                type="text"
-                class="edit__text"
-                placeholder="Publish year"
-                value="@publish_year@"
-                name="publish_year"
-        />
-    </div>
-    <div>
-        <label for="book_pages" class="edit__label">Total pages</label>
-        <input
-                type="text"
-                class="edit__text"
-                placeholder="pages"
-                value="@book_pages@"
-                name="book_pages"
-        />
-    </div>
-    <button class="edit__button" type="submit">Save</button>
+  <!--security-->
+  <input type="hidden" name="csrf" value="@csrf_token@" />
+  <!--end security-->
+  <div>
+    <label for="book_title" class="edit__label">Title</label>
+    <input
+      type="text"
+      class="edit__text"
+      placeholder="Title"
+      value="@book_title@"
+      name="book_title"
+    />
+  </div>
+  <div>
+    <label for="language" class="edit__label">Language</label>
+    @select_lang@
+  </div>
+  <div>
+    <label for="favorite" class="edit__label">Popular</label>
+    @select_pop@
+  </div>
+  <div>
+    <label for="publish_year" class="edit__label"
+      >Publish year (YY-MM-DD)</label
+    >
+    <input
+      type="text"
+      class="edit__text"
+      placeholder="Publish year"
+      value="@publish_year@"
+      name="publish_year"
+    />
+  </div>
+  <div>
+    <label for="book_pages" class="edit__label">Total pages</label>
+    <input
+      type="text"
+      class="edit__text"
+      placeholder="pages"
+      value="@book_pages@"
+      name="book_pages"
+    />
+  </div>
+  <button class="edit__button" type="submit">Save</button>
 </form>
