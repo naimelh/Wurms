@@ -6,73 +6,75 @@
   color: black;
 }
 
+main {
+  margin-top: 10px;
+}
+
 .lContainer {
   max-width: 1500px;
+  width: 98%;
   margin: 0 auto;
-  min-height: 100px;
-  padding: 20px;
-  background-color: white;
 }
-a {
-  margin-bottom: 20px;
-  &:link {
-    text-decoration: none;
-  }
 
-  &:visited,
-  &:active {
-    text-decoration: none;
-  }
-  &:hover {
-    article {
-    }
-    display: block;
+.listpage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 
-    border-bottom: solid 5px #e4c4bc;
-  }
-
-  &:nth-child(even) {
-    article {
+  & article {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    &:nth-child(even) {
       flex-direction: row-reverse;
-      justify-content: flex-end;
-      .description {
+      & .title {
         margin-right: 10px;
         margin-left: 0px;
       }
     }
-  }
-
-  article {
-    display: flex;
-    margin-bottom: 40px;
-    img {
-      display: block;
+    & .imgholder {
+      max-width: 200px;
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-    h2 {
-      margin-bottom: 10px;
-      font-size: 25px;
-      background-color: #5d7595;
-      color: white;
-      padding: 10px;
-    }
-    p {
-      padding: 5px;
-      text-align: justify;
-    }
-    .description {
-      width: 100%;
+    & .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
       margin-left: 10px;
-    }
-  }
-}
+      flex-wrap: wrap;
+      font-size: 20px;
+      width: 90%;
+      & a {
+        display: block;
+        color: white;
+        padding: 10px 10px 4px 10px;
+        margin-bottom: 5px;
+        &:hover {
+          color: #e4c4bc;
+        }
+      }
 
-@media screen and (max-width: 650px) {
-  a {
-    article {
-      display: block;
-      img {
-        margin: auto;
-        margin-bottom: 40px;
+      & .link {
+        margin-bottom: 20px;
+        background-color: #5d7595;
+        color: white;
+        width: 100%;
+      }
+      & .text {
+        background-color: white;
+        width: 100%;
+        & p {
+          margin-bottom: 10px;
+        }
       }
     }
   }
