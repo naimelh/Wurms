@@ -1,3 +1,6 @@
+
+
+
 <form action="lib/save.php" method="POST" class="edit">
   <!-- meta info -->
   <input type="hidden" id="table" name="table" value="Book" />
@@ -10,6 +13,18 @@
   <!--security-->
   <input type="hidden" name="csrf" value="@csrf_token@" />
   <!--end security-->
+
+  <!-- errors -->
+  <div>
+    <div><p>@book_title_error@ <br>
+      @publish_year_error@<br>
+      @book_pages_error@<br>
+      @lang_id_error@<br>
+      @fav_id_error@
+    </p></div>
+  </div>
+  <!--end errors-->
+
   <div>
     <label for="book_title" class="edit__label">Title</label>
     <input
@@ -19,6 +34,7 @@
       value="@book_title@"
       name="book_title"
     />
+
   </div>
   <div>
     <label for="language" class="edit__label">Language</label>
@@ -39,6 +55,7 @@
       value="@publish_year@"
       name="publish_year"
     />
+
   </div>
   <div>
     <label for="book_pages" class="edit__label">Total pages</label>
@@ -49,6 +66,7 @@
       value="@book_pages@"
       name="book_pages"
     />
+
   </div>
   <button class="edit__button" type="submit">Save</button>
 </form>

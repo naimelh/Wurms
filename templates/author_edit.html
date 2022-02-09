@@ -10,6 +10,19 @@
   <!--security-->
   <input type="hidden" name="csrf" value="@csrf_token@" />
   <!--end security-->
+
+  <!-- errors -->
+  <div>
+    <div><p>@aut_firstname_error@ <br>
+      @aut_lastname_error@<br>
+      @country_id_error@<br>
+      @gender_id_error@<br>
+      @aut_birthday_error@<br>
+      @aut_bio_error@
+    </p></div>
+  </div>
+  <!--end errors-->
+
   <div>
     <label for="aut_firstname" class="edit__label">Firstname</label>
     <input

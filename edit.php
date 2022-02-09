@@ -63,6 +63,12 @@ PrintHeader();
             // Merging CSRF and the 2 HTML Selects into the template
             $output = MergeViewWithExtraElements($output, $extra_elements);
 
+            // Replace Error Tags when error exist
+            $output = MergeViewWithErrors( $output, $errors );
+
+            // Delete all @@ tags that are not filled in
+            $output = RemoveEmptyErrorTags( $output, $data );
+
 
             // Printing the Form
             print $output;
@@ -104,6 +110,12 @@ PrintHeader();
 
             // Merging CSRF and the 2 HTML Selects into the template
             $output = MergeViewWithExtraElements($output, $extra_elements);
+
+            // Replace Error Tags when error exist
+            $output = MergeViewWithErrors( $output, $errors );
+
+            // Delete all @@ tags that are not filled in
+            $output = RemoveEmptyErrorTags( $output, $data );
 
 
             // Printing the Form
