@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Author</title>
-    <link rel="stylesheet" href="styles/detailpage.css" />
+    <link rel="stylesheet" href="/styles/detailpage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,17 +17,29 @@
   <body>
     <main>
       <div class="aContainer">
-        <img src="https://picsum.photos/500/300" alt="aut_img" />
-        <div class="bio">
-          <h1 class="author title">
-            <span> ✍ </span>&nbsp Author name: @aut_firstname@ &nbsp
-            @aut_lastname@
+        <img src="../img/author/@aut_img@" alt="aut_img" alt="aut_img" />
+        <br />
+        <div class="title">
+          <h1 class="title__aut">
+            <span> ✍ </span> Author:
+            <span> @aut_firstname@ @aut_lastname@</span>
           </h1>
-          <h2 class="gen title">Gender: @gender_id</h2>
-          <h2 class="bd title">Born on: @aut_birthday@</h2>
-          <h2 class="country title">Country: @country_id@</h2>
+          <br />
+          <h2 class="title__gen">Gender: @gender_id</h2>
+          <h2 class="title__bor">Born on: @aut_birthday@</h2>
+          <h2 class="title__cou">Country: @country_id@</h2>
           <hr />
-          <p class="bio">@aut_bio@</p>
+        </div>
+
+        <p class="bio">@aut_bio@</p>
+
+        <div class="button">
+          <form method="get" action="edit.php">
+            <input type="submit" name="edit" value="Edit" class="edit" />
+          </form>
+          <form method="post" action="delete.php">
+            <input type="submit" name="delete" value="Delete" class="delete" />
+          </form>
         </div>
       </div>
     </main>
