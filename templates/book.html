@@ -1,0 +1,30 @@
+<div class="container-details">
+  <div class="imgHolder">
+    <img class="detail_img" src="../img/books/@book_img@" alt="book_img" />
+  </div>
+  <br />
+  <div class="detail">
+    <h2 class="detail__header">
+      <span> ✍ </span> Title:
+      <span> "@book_title@"</span>
+    </h2>
+    <br />
+    <h3 class="detail__item">Author: @aut_firstname@ @aut_lastname@</h3>
+    <h3 class="detail__item">Published on: @publish_year@</h3>
+    <h3 class="detail__item">Pages: @book_pages@</h3>
+    <h3 class="detail__item">Genre: @genre_desc@</h3>
+    <h3 class="detail__item">Language: @lang_desc@</h3>
+
+    <hr class="fallback" />
+
+    <div class="buttons">
+      <form action="edit.php" method="get">
+        <input type="submit" name="edit" value="Edit" class="edit" />
+      </form>
+      <form action="delete.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
+        <input type="submit" name="delete" value="Delete" class="delete" />
+      </form>
+    </div>
+  </div>
+</div>

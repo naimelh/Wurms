@@ -1,0 +1,38 @@
+<div class="container-details">
+  <img
+    class="detail_img"
+    src="../img/authors/@aut_img@"
+    alt="aut_img"
+  />
+  <br />
+  <div class="detail">
+    <h2 class="detail__header">
+      <span> ✍ </span> Name:
+      <span> @aut_firstname@ @aut_lastname@</span>
+    </h2>
+    <br />
+    <h3 class="detail__item">Gender: @gender_desc@</h3>
+    <h3 class="detail__item">Born on: @aut_birthday@</h3>
+    <h3 class="detail__item">Country: @country_desc@</h3>
+    <hr class="fallback"/>
+  </div>
+    <p id="bio_author">Biography:</p>
+  <p class="about_the_author">
+    @aut_bio@
+  </p>
+
+    <div class="buttons">
+      <form method="GET" action="edit.php">
+        <input type="submit" name="edit" value="Edit" class="edit" />
+      </form>
+      <form method="POST" action="?id=<?-php echo $result->id; ?>">
+        <input
+          type="submit"
+          name="delete"
+          value="Delete"
+          class="delete"
+        />
+      </form>
+    </div>
+  </div>
+</div>
