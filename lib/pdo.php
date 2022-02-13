@@ -10,45 +10,40 @@ function CreateConnection()
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
 }
 
-function GetData( $sql )
+function GetData($sql)
 {
     global $conn;
 
     CreateConnection();
 
     //define and execute query
-    $result = $conn->query( $sql );
+    $result = $conn->query($sql);
 
     //show result (if there is any)
-    if ( $result->rowCount() > 0 )
-    {
+    if ($result->rowCount() > 0) {
         //$rows = $result->fetchAll(PDO::FETCH_ASSOC); //geeft array zoals ['lan_id'] => 1, ...
         //$rows = $result->fetchAll(PDO::FETCH_NUM); //geeft array zoals [0] => 1, ...
         $rows = $result->fetchAll(PDO::FETCH_BOTH); //geeft array zoals [0] => 1, ['lan_id'] => 1, ...
         //var_dump($rows);
         return $rows;
-    }
-    else
-    {
+    } else {
         return [];
     }
-
 }
 
-function ExecuteSQL( $sql )
+function ExecuteSQL($sql)
 {
     global $conn;
 
     CreateConnection();
 
     //define and execute query
-    $result = $conn->query( $sql );
+    $result = $conn->query($sql);
 
     return $result;
 }
