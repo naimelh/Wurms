@@ -1,7 +1,7 @@
 <?php
 require_once "lib/autoload.php";
-require_once"lib/select.php";
-CreateConnection();
+require_once "lib/select.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,18 +26,28 @@ PrintHeader();
             <section class="listpage">
 
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ; ?>" method="post">
-
-<input name="searchquery" type="number" size="44" maxlength="88"> 
-  
+              <form action="<?php echo $_SERVER['PHP_SELF'] ; ?>" method="post">
 <?php
+              $csrf_token = GenerateCSRF();
+                print '<input type="hidden" name="csrf" value="' . $csrf_token .'"> <p><small></small></p>';
+?>
+                <input name="searchquery" type="number" size="44" maxlength="88"> 
+  
+
+<?php
+
                print  MakeSelect( "genre_id", $value="", "select * from Genre", ["genre_id","genre_desc"], $optional = true);
 
 ?>
 <div class="form-group row">
-        <label class="col-sm-4 col-form-label"></label>
         <div class="col-sm-8">
-            <input type="submit">
+            <input type="submit" value="Verzenden">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-8">
+            <a href="add.php">Voeg een Boek</a>
         </div>
     </div>
 
@@ -61,9 +71,11 @@ PrintHeader();
                     INNER JOIN Book_Genre BG on BG.book_id =  B.book_id
                     INNER JOIN Genre G on BG.genre_id = G.genre_id
                     WHERE  G.genre_id = $genre ";
-                    $template = file_get_contents("templates/listpagebook.html");
                     $data = GetData($sql);
-                    print MergeViewWithData($template, $data);
+                    $output = file_get_contents("templates/listpagebook.html");
+                    $output= MergeViewWithData($output, $data);
+                    $output = MergeViewWithExtraElements( $output, $extra_elements );
+                    print $output;
                   }
                   
                   elseif(empty($genre)){
@@ -73,9 +85,11 @@ PrintHeader();
                     INNER JOIN Author_Book AB on B.book_id = AB.book_id
                     INNER JOIN Author A on AB.aut_id = A.aut_id
                     WHERE  B.book_pages <= $pages ";
-                    $template = file_get_contents("templates/listpagebook.html");
                     $data = GetData($sql);
-                    print MergeViewWithData($template, $data);
+                    $output = file_get_contents("templates/listpagebook.html");
+                    $output= MergeViewWithData($output, $data);
+                    $output = MergeViewWithExtraElements( $output, $extra_elements );
+                    print $output;
                   }
                     
                   
@@ -88,10 +102,11 @@ PrintHeader();
                           INNER JOIN Book_Genre BG on BG.book_id =  B.book_id
                           INNER JOIN Genre G on BG.genre_id = G.genre_id
                     WHERE  B.book_pages <= $pages  AND G.genre_id = $genre ";
-
-            $template = file_get_contents("templates/listpagebook.html");
-            $data = GetData($sql);
-            print MergeViewWithData($template, $data);
+                    $data = GetData($sql);
+                    $output = file_get_contents("templates/listpagebook.html");
+                    $output= MergeViewWithData($output, $data);
+                    $output = MergeViewWithExtraElements( $output, $extra_elements );
+                    print $output;
 
                   }
                 }

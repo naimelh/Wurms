@@ -1,7 +1,8 @@
 <?php
 require_once "lib/autoload.php";
-require_once"lib/select.php";
+require_once "lib/select.php";
 CreateConnection();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,7 @@ CreateConnection();
 <body>
 <?php
 PrintHeader();
+
 ?>
 
 <main>
@@ -28,14 +30,30 @@ PrintHeader();
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ; ?>" method="post">
 
-<?php
+    <input type="hidden" id="table" name="table" value="autor">
+    <input type="hidden" id="afterinsert" name="afterinsert" value="index.php">
+    <input type="hidden" id="afterupdate" name="afterupdate" value="index.php">
+    <!-- end meta info -->
+
+    <!--security-->
+  <?php
+    $csrf_token = GenerateCSRF();
+    print '<input type="hidden" name="csrf" value="' . $csrf_token .'">
+    <p><small></small></p>';
+
+
                print  MakeSelectAut( "aut_id", $value="", "select * from Author", ["aut_id", "aut_firstname", "aut_lastname"], $optional = true);
 
 ?>
 <div class="form-group row">
-        <label class="col-sm-4 col-form-label"></label>
         <div class="col-sm-8">
-            <input type="submit">
+            <input type="submit" value="Verzenden">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-8">
+            <a href="add.php">Voeg een autheur</a>
         </div>
     </div>
 
@@ -56,9 +74,12 @@ PrintHeader();
                     INNER JOIN Author_Book AB on B.book_id = AB.book_id
                     INNER JOIN Author A on AB.aut_id = A.aut_id
                     WHERE A.aut_id = $aut";     
-            $template = file_get_contents("templates/listpagebook.html");
+
+            ;
             $data = GetData($sql);
-            print MergeViewWithData($template, $data);
+            $output = file_get_contents("templates/listpagebook.html");
+            $output = MergeViewWithData($template, $data); 
+            print $output;
 
                   }
                 }
