@@ -1,7 +1,6 @@
 <?php
 require_once "lib/autoload.php";
 CreateConnection();
-?>
 
 
 DeleteFormData();
@@ -76,3 +75,5 @@ function DeleteFormData()
         if ($delete and $_POST["afterdelete"] > "") header("Location: ../" . $_POST["afterdelete"] );
     }
 }
+
+?>
