@@ -25,8 +25,12 @@ CreateConnection();
     ?>
 
     <main>
+      <div class="container-details">
+        <h2 class="detail__header">About</h2>
         <?php
-        if (!is_numeric($_GET['aut_id'])) die("Ongeldig argument " . $_GET['aut_id'] . " opgegeven");
+        
+        if  ((key_exists('aut_id', $_GET)) AND (!is_numeric($_GET['aut_id'])))  die('Ongeldig argument: ' . $_GET['aut_id'] . 'is opgegeven</h2>');
+
 
         //SQL query to get the data from the database
         $sql = 'SELECT A.aut_id,A.aut_firstname, A.aut_lastname,A.aut_birthday,A.aut_bio, A.aut_img, G.gender_id, G.gender_desc, C.country_id, C.country_desc,B.book_id,B.book_title
