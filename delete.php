@@ -32,7 +32,7 @@ function DeleteFormData()
 
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase($table, $pkey);
+        CompareWithDatabase($table, $pkey, $book, $author );
 
         //terugkeren naar afzender als er een fout is
         if (array_key_exists('errors', $_SESSION) && $_SESSION["errors"] != null && count($_SESSION['errors']) > 0 ) {
