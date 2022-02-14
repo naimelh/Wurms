@@ -21,18 +21,16 @@
     @aut_bio@
   </p>
 
-    <div class="buttons">
-      <form method="GET" action="edit.php">
+  <div class="buttons">
+      <form  action="../edit.php" method="GET">
         <input type="submit" name="edit" value="Edit" class="edit" />
       </form>
-      <form method="POST" action="?id=<?-php echo $result->id; ?>">
-        <input
-          type="submit"
-          name="delete"
-          value="Delete"
-          class="delete"
-        />
+      <!--DELETE FORM-->
+      <form action='../delete.php' method="POST">
+      <input type="hidden" name="id_to_delete" value="<?php echo $author['id'] ?>"/>
+        <input type="submit" name="delete" value="Delete" class="delete"/>
       </form>
+    </div>
     </div>
   </div>
 </div>
