@@ -6,8 +6,9 @@ function PrintHead($title = "")
     $head = str_replace( "@title@", $title, $head );
     print $head;
 }
-function PrintHeader(){
+function PrintHeader($search = ""){
     $header = file_get_contents("templates/header.html");
+    $header = str_replace( "@search@", $search, $header );
     print $header;
 }
 function printFooter(){
