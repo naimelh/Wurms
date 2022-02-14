@@ -3,6 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once "autoload.php";
+require_once "sanitize.php";
+require_once "validate.php";
+
+
+
 
 SaveFormData();
 
@@ -10,7 +15,8 @@ function SaveFormData()
 {
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
     {
-        //controle CSRF token
+        
+
         if ( ! key_exists("csrf", $_POST)) die("Missing CSRF");
         if ( ! hash_equals( $_POST['csrf'], $_SESSION['lastest_csrf'] ) ) die("Problem with CSRF");
 

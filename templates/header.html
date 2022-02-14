@@ -1,12 +1,6 @@
 <header>
   <div class="hContainer">
-    <h1 class="title">
-      <img
-        src="https://dummyimage.com/70x70/587297/fff"
-        alt=""
-        class="title__img"
-      /><span class="title__first">W</span>URMS
-    </h1>
+    <h1 class="title"><span class="title__first">W</span>URMS</h1>
     <nav>
       <ul class="list">
         <li class="list__item">
@@ -16,12 +10,18 @@
           <a href="./listpagebook.php" class="list__item__link">Boeken</a>
         </li>
         <li class="list__item">
-          <a href="./listpageautor.php" class="list__item__link">Auteur</a>
+          <a href="./listpageauthor.php" class="list__item__link">Auteur</a>
         </li>
       </ul>
     </nav>
     <form action="search.php" class="search">
-      <input type="text" class="search__input" name="search" placeholder="Zoeken" value="@search@" />
+      <input
+        type="text"
+        class="search__input"
+        name="search"
+        placeholder="Zoeken"
+        value="@search@"
+      />
       <button type="submit" class="search__button">🔎</button>
     </form>
   </div>
