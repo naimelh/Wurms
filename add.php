@@ -10,7 +10,7 @@ CreateConnection();
 <?php
 PrintHead("Voeg iets toe");
 ?>
-<link rel="stylesheet" href="./styles/edit.css"/>
+<link rel="stylesheet" href="styles/add.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap"
@@ -60,5 +60,8 @@ PrintHeader();
                 </div>
             </div>
         </main>
+        <?php
+    printFooter();
+    ?>
     </body>
 </html>

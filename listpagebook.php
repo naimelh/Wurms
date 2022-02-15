@@ -10,7 +10,7 @@ require_once "lib/select.php";
     <?php
     PrintHead("Boeken");
     ?>
-    <link rel="stylesheet" href="./styles/listpage.css"/>
+    <link rel="stylesheet" href="styles/listpage.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap"
@@ -35,7 +35,7 @@ PrintHeader();
                     echo $_GET['search'];
                   }
                   
-                  ?>" class="form-control" placeholder="Number of pages">
+                  ?>" class="form-control" placeholder="Aantal pagina's">
 
                   <?php
 
@@ -43,15 +43,16 @@ PrintHeader();
                 
                   ?>
                   
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary">Zoeken</button>
                 </div>
-                <a href="add.php"> Add a new book </a>
+                <a href="add.php"> Voeg een nieuwe boek </a>
               </form>
-             
+            
                 
               <?php
                   $pages = $_GET['search'];
                   $genre = $_GET['genre_id'];
+                  
                   if(empty($pages) AND empty($genre)){
                     $sql = "SELECT B.book_id, B.book_title, B.book_img, B.book_pages,  B.publish_year, A.aut_id, A.aut_firstname, A.aut_lastname, G.genre_id
                     FROM Book B

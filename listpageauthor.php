@@ -37,13 +37,14 @@ PrintHeader();
                 
                   ?>
                   
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary">Zoeken</button>
                 </div>
-                <a href="add.php"> Add a new author </a>
+                <a href="add.php"> Voeg een nieuwe Autheur </a>
               </form>
                 
               <?php
                   $aut = $_GET['aut_id'];
+                  
                 
                   if (empty($aut)) {
                     $sql = "SELECT B.book_id, B.book_title, B.book_img, B.book_pages,  B.publish_year, A.aut_id, A.aut_firstname, A.aut_lastname,A.aut_birthday,A.aut_bio, A.aut_img
