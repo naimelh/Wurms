@@ -22,8 +22,17 @@
         <input type="submit" name="edit" value="Edit" class="edit" />
       </form>
       <!--DELETE FORM-->
-      <form action='../delete.php' method="POST">
-        <input type="hidden" name="id_to_delete" value="<?php echo $book['id'] ?>"/>
+      <form action='lib/delete.php' method="POST">
+        <!--META INFO-->
+        <input type="hidden" id="table" name="table" value="book">
+        <input type="hidden" id="pkey" name="pkey" value="book_id">
+        <input type="hidden" id="book_id" name="book_id" value="@book_id@">
+        <input type="hidden" id="afterdelete" name="afterdelete" value="index.php">
+
+        <!--security-->
+        <input type="hidden" name="csrf" value="@csrf_token@">
+        <!-- end security-->
+        <!-- del button-->
         <input type="submit" name="delete" value="Delete" class="delete"/>
       </form>
     </div>
