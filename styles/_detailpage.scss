@@ -1,27 +1,31 @@
-@use "reset";
+@use "_reset.scss";
 
 * {
-  box-sizing: border-box;
-  font-family: "Old Standard TT", serif;
-  line-height: normal;
   color: #5d7595;
+  font-family: "Old Standard TT";
+  line-height: 1.7rem;
 }
 
-.aContainer {
+main {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.container-details {
+  max-width: 1500px;
+  width: 98%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1500px;
-  margin: 0 auto;
-  min-height: 100px;
-  padding: 2%;
+  /* padding: 2%; */
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
-img {
-  width: 500px;
+.detail_img {
+  width: 300px;
   height: auto;
   transition: 0.5s all ease-in-out;
   overflow: hidden;
@@ -29,40 +33,44 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   margin-top: 1%;
-  object-fit: cover;
+  object-fit: contain;
   &:hover {
     transform: scale(1.3);
+    border-radius: 0%;
   }
 }
 
-title {
-  font-weight: 400;
-  font-size: 35px;
-  text-align: center;
+.detail {
+  font-family: "Old Standard TT";
+  font-size: 22px;
 
-  &__aut {
+  &__item {
+    font-weight: 400;
+    text-align: justify;
+    margin: 0 auto;
+  }
+
+  &__header {
     font-weight: 700;
-    font-size: 60px;
-    color: #e4c4bc;
+    text-align: center;
   }
 }
 
-.bio {
-  margin-bottom: 1%;
-  font-size: 24px;
+#bio_author {
+  margin: 1%;
+  font-size: 30px;
+}
+.about_the_author {
+  padding: 0 15%;
   text-align: justify;
   text-justify: inter-word;
-  a:link {
-    color: #e4c4bc;
-    text-decoration: none;
-    cursor: auto;
-  }
 }
 
-.button {
+.buttons {
   display: flex;
   gap: 10%;
   margin: 3%;
+  margin-left: 0;
 
   .delete {
     align-self: center;
@@ -90,29 +98,30 @@ title {
     margin-top: 20px;
   }
 }
-span {
+h2 span {
   color: #e4c4bc;
+  font-size: 45px;
 }
-hr {
+.fallback {
   height: 1px;
   border-width: 0;
   background-color: #e4c4bc;
 }
 
 @media screen and (max-width: 950px) {
-  .aContainer {
+  .container-details {
     width: 80%;
     padding: 0;
   }
 }
 @media screen and (max-width: 450px) {
-  .aContainer {
+  .container-details {
     width: 100%;
   }
-  .title {
+  .title_details {
     font-size: 24px;
   }
-  .button {
+  .buttons {
     display: block;
     margin: 0.4em auto;
   }

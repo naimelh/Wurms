@@ -1,90 +1,210 @@
-@use "reset";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Old Standard TT", serif;
-  line-height: normal;
+}
+
+* {
   color: #5d7595;
+  font-family: "Old Standard TT";
+  line-height: 1.7rem;
 }
 
-.aContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+main {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.container-details {
   max-width: 1500px;
+  width: 98%;
   margin: 0 auto;
-  min-height: 100px;
-  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 2%; */
 }
-
-.aContainer:hover {
-  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.container-details:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-img {
-  width: 500px;
+.detail_img {
+  width: 300px;
   height: auto;
-  -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
   overflow: hidden;
   max-width: 100%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   margin-top: 1%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  object-fit: contain;
 }
-
-img:hover {
-  -webkit-transform: scale(1.3);
+.detail_img:hover {
   transform: scale(1.3);
+  border-radius: 0%;
 }
 
-title {
+.detail {
+  font-family: "Old Standard TT";
+  font-size: 22px;
+}
+.detail__item {
   font-weight: 400;
-  font-size: 35px;
+  text-align: justify;
+  margin: 0 auto;
+}
+.detail__header {
+  font-weight: 700;
   text-align: center;
 }
 
-title__aut {
-  font-weight: 700;
-  font-size: 60px;
-  color: #e4c4bc;
+#bio_author {
+  margin: 1%;
+  font-size: 30px;
 }
 
-.bio {
-  margin-bottom: 1%;
-  font-size: 24px;
+.about_the_author {
+  padding: 0 15%;
   text-align: justify;
   text-justify: inter-word;
 }
 
-.bio a:link {
-  color: #e4c4bc;
-  text-decoration: none;
-  cursor: auto;
-}
-
-.button {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.buttons {
   display: flex;
   gap: 10%;
   margin: 3%;
+  margin-left: 0;
 }
-
-.button .delete {
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
+.buttons .delete {
   align-self: center;
   font-size: 20px;
   padding: 10px;
@@ -96,10 +216,7 @@ title__aut {
   border-radius: 5px;
   margin-top: 20px;
 }
-
-.button .edit {
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
+.buttons .edit {
   align-self: center;
   font-size: 20px;
   padding: 10px;
@@ -112,33 +229,36 @@ title__aut {
   margin-top: 20px;
 }
 
-span {
+h2 span {
   color: #e4c4bc;
+  font-size: 45px;
 }
 
-hr {
+.fallback {
   height: 1px;
   border-width: 0;
   background-color: #e4c4bc;
 }
 
 @media screen and (max-width: 950px) {
-  .aContainer {
+  .container-details {
     width: 80%;
     padding: 0;
   }
 }
-
 @media screen and (max-width: 450px) {
-  .aContainer {
+  .container-details {
     width: 100%;
   }
-  .title {
+
+  .title_details {
     font-size: 24px;
   }
-  .button {
+
+  .buttons {
     display: block;
     margin: 0.4em auto;
   }
 }
+
 /*# sourceMappingURL=detailpage.css.map */
