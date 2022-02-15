@@ -32,7 +32,7 @@ function DeleteFormData()
 
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase($table, $pkey, $book, $author );
+        CompareWithDatabase($table, $pkey);
 
         //terugkeren naar afzender als er een fout is
         if (array_key_exists('errors', $_SESSION) && $_SESSION["errors"] != null && count($_SESSION['errors']) > 0 ) {
@@ -45,12 +45,12 @@ function DeleteFormData()
         if ( $_POST["$pkey"] > 0 ) $delete = true;
 
         //delete query
-        $sql = "DELETE $table SET ";
+        if ( $delete ) $sql = "DELETE FROM $table WHERE id=?" . $_GET['id'] ;
 
 
         foreach ($_POST as $field => $value) {
             //skip non-data fields
-            if (in_array($field, ['table', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'afterdelete'])) continue;
+            if (in_array($field, ['table', 'pkey', 'afterinsert', 'afterupdate', 'csrf'])) continue;
 
             //handle primary key field
             if ($field == $pkey) {
