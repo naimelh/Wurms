@@ -149,6 +149,27 @@ main {
   margin: 0 auto;
 }
 
+form {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+form a {
+  border: 1px solid #e4c4bc;
+  background-color: #5d7595;
+  margin-left: 20px;
+  padding: 10px;
+  justify-self: center;
+  color: white;
+}
+form a:hover {
+  color: #e4c4bc;
+}
+
 .listpage {
   display: flex;
   flex-direction: column;
@@ -209,6 +230,10 @@ main {
 }
 .listpage article .title .text p {
   margin-bottom: 10px;
+  text-align: justify;
+}
+.listpage article .title .text p.geschreven {
+  color: #e4c4bc;
 }
 
 /*# sourceMappingURL=listpage.css.map */

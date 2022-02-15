@@ -1,15 +1,15 @@
 <article>
   <div class="imgholder">
-    <img src="img/books/@book_img@" alt="" />
+    <img src="img/author/@aut_img@" alt="" />
   </div>
   <div class="title">
     <div class="link">
-      <a href="book.php?book_id=@book_id@">@book_title@</a>
       <a href="author.php?aut_id=@aut_id@">@aut_firstname@ @aut_lastname@</a>
     </div>
     <div class="text">
-      <p>@book_pages@ pagina's</p>
-      <p class="geschreven">gepubliceerd in @publish_year@</p>
+      <p>Geboren in @aut_birthday@</p>
+      <p class="geschreven">Boek geschreven: @book_title@</p>
+      <p>@aut_bio@</p>
     </div>
   </div>
 </article>
