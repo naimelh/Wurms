@@ -8,7 +8,7 @@ require_once "lib/select.php";
 <html lang="en">
 <head>
     <?php
-    PrintHead("Boeken");
+    PrintHead("Lijst van Autheurs");
     ?>
     <link rel="stylesheet" href="./styles/listpage.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
