@@ -7,7 +7,6 @@ CreateConnection();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php
     PrintHead("Details about the book");
@@ -20,9 +19,9 @@ CreateConnection();
 
 <body>
 
-    <?php
-    PrintHeader();
-    ?>
+        <?php
+        PrintHeader();
+        ?>
 
     <main>
         <?php
@@ -46,14 +45,23 @@ CreateConnection();
         $template = file_get_contents("templates/book.html");
 
         // Merge the template of detail page with the data and fill in the @..@ positions
-        print MergeViewWithData($template, $data);
+        $output = MergeViewWithData($template, $data);
+
+        $extra_elements['csrf_token'] = GenerateCSRF();
+
+        //merge with csfr
+        $output =  MergeViewWithExtraElements( $output , $extra_elements);
+
+        print $output;
+
+
         ?>
     </main>
 
 
-    <?php
-    printFooter();
-    ?>
+        <?php
+        printFooter();
+        ?>
 
 </body>
 

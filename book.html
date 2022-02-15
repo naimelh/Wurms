@@ -1,0 +1,48 @@
+<div class="container-details">
+  <div class="imgHolder">
+    <img class="detail_img" src="../img/books/@book_img@" alt="book_img" />
+  </div>
+  <br />
+  <div class="detail">
+    <h2 class="detail__header">
+      <span> ✍ </span> Title:
+      <span> "@book_title@"</span>
+    </h2>
+    <br />
+    <h3 class="detail__item">Author: @aut_firstname@ @aut_lastname@</h3>
+    <h3 class="detail__item">Published on: @publish_year@</h3>
+    <h3 class="detail__item">Pages: @book_pages@</h3>
+    <h3 class="detail__item">Genre: @genre_desc@</h3>
+    <h3 class="detail__item">Language: @lang_desc@</h3>
+
+    <hr class="fallback" />
+
+    <div class="buttons">
+      <form action="../edit.php" method="GET">
+<!--        &lt;!&ndash;META INFO&ndash;&gt;-->
+<!--        <input type="hidden" id="table" name="table" value="book">-->
+<!--        <input type="hidden" id="pkey" name="pkey" value="book_id">-->
+<!--        <input type="hidden" id="book_id" name="book_id" value="@book_id@">-->
+<!--        <input type="hidden" id="afterupdate" name="afterupdate" value="index.php">-->
+<!--        &lt;!&ndash;security&ndash;&gt;-->
+<!--        <input type="hidden" name="csrf" value="@csrf_token@">-->
+<!--        &lt;!&ndash;btn&ndash;&gt;-->
+        <input type="submit" name="edit" value="Edit" class="edit" />
+      </form>
+      <!--DELETE FORM-->
+      <form action='lib/delete.php' method="POST">
+        <!--META INFO-->
+        <input type="hidden" id="table" name="table" value="book">
+        <input type="hidden" id="pkey" name="pkey" value="book_id">
+        <input type="hidden" id="book_id" name="book_id" value="@book_id@">
+        <input type="hidden" id="afterdelete" name="afterdelete" value="index.php">
+
+        <!--security-->
+        <input type="hidden" name="csrf" value="@csrf_token@">
+        <!-- end security-->
+        <!-- del button-->
+        <input type="submit" name="delete" value="Delete" class="delete"/>
+      </form>
+    </div>
+  </div>
+</div>

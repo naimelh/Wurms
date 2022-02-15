@@ -1,0 +1,42 @@
+<div class="imgHolder">
+  <img class="detail_img" src="../img/authors/@aut_img@" alt="aut_img" />
+</div>
+<br />
+<div class="detail">
+  <h2 class="detail__header">
+    <span> ✍ </span> Name:
+    <span> @aut_firstname@ @aut_lastname@</span>
+  </h2>
+  <br />
+  <h3 class="detail__item">Gender: @gender_desc@</h3>
+  <h3 class="detail__item">Born on: @aut_birthday@</h3>
+  <h3 class="detail__item">Country: @country_desc@</h3>
+  <hr class="fallback" />
+</div>
+<p id="bio_author">Biography:</p>
+<p class="about_the_author">@aut_bio@</p>
+
+<div class="buttons">
+  <form action="edit.php" method="GET">
+    <input type="submit" name="edit" value="Edit" class="edit" />
+  </form>
+  <!--DELETE FORM-->
+  <form action="lib/delete.php" method="POST">
+    <!--META INFO-->
+    <input type="hidden" id="table" name="table" value="book" />
+    <input type="hidden" id="pkey" name="pkey" value="book_id" />
+    <input type="hidden" id="aut_id" name="aut_id" value="@aut_id@" />
+    <input
+      type="hidden"
+      id="afterdelete"
+      name="afterdelete"
+      value="index.php"
+    />
+
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@" />
+    <!-- end security-->
+    <!-- del button-->
+    <input type="submit" name="delete" value="Delete" class="delete" />
+  </form>
+</div>
